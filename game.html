@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Memory Royals - Game</title>
+
+    <link
+        rel="stylesheet"
+        href="css/game.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         MAIN GAME
+    =================================================== -->
+
+    <main class="game-container">
+
+
+        <!-- ==================================================
+             LEFT HUD
+        =================================================== -->
+
+    <div class="top-left-hud">
+
+        <!-- LEVEL -->
+        <div class="hud-card level-card">
+
+            <div class="hud-icon">
+                <img src="assets/images/level-crown.png" alt="Level">
+            </div>
+
+            <div class="hud-content">
+                <div class="hud-label">LEVEL</div>
+                <div class="hud-value" id="levelNumber">1</div>
+            </div>
+
+        </div>
+
+
+        <!-- KINGS FOUND -->
+        <div class="hud-card">
+
+            <div class="hud-icon">
+                <img class="hud-icon-img king-icon" src="assets/images/king.png" alt="Kings">
+            </div>
+
+            <div class="hud-content">
+
+                <div class="hud-label">
+                    KINGS FOUND
+                </div>
+
+                <div class="hud-value kings-value">
+                    <span id="kingCounter">0/3</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHANCES -->
+        <div class="hud-card">
+
+            <div class="hud-icon">
+                <img class="hud-icon-img chance-icon" src="assets/images/heart.png" alt="Chances">
+            </div>
+
+            <div class="hud-content">
+
+                <div class="hud-label">
+                    CHANCES
+                </div>
+
+                <div
+                    class="hud-value"
+                    id="chanceCounter"
+                >
+                    3
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+        <!-- ==================================================
+             TIMER
+        =================================================== -->
+
+        <div
+            id="timer"
+            class="timer"
+        >
+            50
+        </div>
+
+
+        <!-- ==================================================
+             TITLE
+        =================================================== -->
+
+        <h1 class="game-title">
+            MEMORY ROYALS
+        </h1>
+
+
+        <!-- ==================================================
+             GAME BOARD
+        =================================================== -->
+
+        <section
+            id="gameBoard"
+            class="game-board"
+        >
+        </section>
+
+
+        <!-- ==================================================
+             FEEDBACK MESSAGE
+        =================================================== -->
+
+        <div
+            id="gameMessage"
+            class="game-message"
+        >
+        </div>
+        <div
+            id="sideFeedback"
+            class="side-feedback"
+        ></div>
+        <!-- Memorise Message -->
+        <div
+            id="memoriseMessage"
+            class="memorise-message"
+        >
+            MEMORISE
+        </div>
+
+    </main>
+
+
+    <!-- ==================================================
+         POPUP
+    =================================================== -->
+
+    <div
+        id="popupOverlay"
+        class="popup-overlay"
+    >
+        <div id="fireworks"></div>
+        <div class="game-popup">
+
+            <div class="popup-title-row">
+
+                <img
+                    id="popupIcon"
+                    class="popup-icon"
+                    src=""
+                    alt="Popup Icon"
+                >
+
+                <div
+                    id="popupTitle"
+                    class="popup-title"
+                >
+                    LEVEL 1
+                </div>
+
+            </div>
+
+            <div
+                id="popupText"
+                class="popup-text"
+            >
+                Get ready!
+            </div>
+
+            <button
+                id="popupButton"
+                class="popup-button"
+            >
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+        <!-- ==================================================
+         BACKGROUND MUSIC
+    =================================================== -->
+
+    <audio
+        id="gameMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="assets/audio/game-music.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- ==================================================
+         DANGER MUSIC
+    =================================================== -->
+
+    <audio
+        id="dangerMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="assets/audio/danger-music.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="js/game-data.js"></script>
+
+    <script src="js/game.js"></script>
+
+
+</body>
+
+</html>

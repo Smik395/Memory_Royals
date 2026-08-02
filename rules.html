@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Royals - Rules</title>
+
+    <link rel="stylesheet"
+          href="css/rules.css">
+
+</head>
+
+<body>
+
+    <div class="rules-container">
+
+        <h1 class="title">
+            MEMORY ROYALS
+        </h1>
+
+        <p class="subtitle">
+            Master Your Memory. Conquer Every Level.
+        </p>
+
+        <section class="section">
+
+            <h2>🎯 Objective</h2>
+
+            <p>
+                Find the required number of <b>King Tiles</b>
+                before your Time or Chances run out.
+                Every level becomes progressively more
+                challenging.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>🧩 Tile Guide</h2>
+
+            <div class="tile-grid">
+
+                <!-- King -->
+
+                <div class="tile-card">
+
+                    <img src="assets/images/king.png"
+                    alt="King Tile"
+                    title="King Tile"
+                    >
+
+                    <div>
+
+                        <h3>King</h3>
+
+                        <p>
+                            Collect the required Kings to
+                            complete the level.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Bomb -->
+
+                <div class="tile-card">
+
+                    <img src="assets/images/bomb.png"
+                    alt="Bomb Tile"
+                    title="bomb Tile"
+                    >
+
+                    <div>
+
+                        <h3>Bomb</h3>
+
+                        <p>
+                            Increases the required King count
+                            by +1.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Heart -->
+
+                <div class="tile-card">
+
+                    <img src="assets/images/heart.png"
+                    alt="Heart Tile"
+                    title="Heart Tile"
+                    >
+
+                    <div>
+
+                        <h3>Heart</h3>
+
+                        <p>
+                            Grants +1 extra chance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Joker -->
+
+                <div class="tile-card">
+
+                    <img src="assets/images/joker.png"
+                    alt="Joker Tile"
+                    title="Joker Tile"
+                    >
+
+                    <div>
+
+                        <h3>Joker</h3>
+
+                        <p>
+                            Removes one chance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Clock -->
+
+                <div class="tile-card">
+
+                    <img src="assets/images/clock.png"
+                    alt="Clock Tile"
+                    title="Clock Tile"
+                    >
+
+                    <div>
+
+                        <h3>Clock</h3>
+
+                        <p>
+                            Adds +10 seconds.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Fool -->
+
+                <div class="tile-card">
+
+                    <img src="assets/images/fool.png"
+                    alt="Fool Tile"
+                    title="Fool Tile"
+                    >
+
+                    <div>
+
+                        <h3>Fool</h3>
+
+                        <p>
+                            Has no effect. It exists only to
+                            confuse your memory.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <h2>🎮 How to Play</h2>
+
+            <ul>
+
+                <li>Memorize the board before the tiles are hidden.</li>
+
+                <li>Reveal tiles one by one.</li>
+
+                <li>Collect the required Kings.</li>
+
+                <li>Manage your Time and Chances wisely.</li>
+
+                <li>Avoid Bombs and Jokers.</li>
+
+                <li>Use Hearts and Clocks to survive longer.</li>
+
+            </ul>
+
+        </section>
+
+        <section class="section">
+
+            <h2>🏆 Win</h2>
+
+            <p>
+                Collect all required Kings before
+                Time or Chances reach zero.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>💀 Lose</h2>
+
+            <p>
+
+                • Time reaches 0
+
+                <br>
+
+                • Chances reach 0
+
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>🚧 Development Notice</h2>
+
+            <p>
+
+                Memory Royals is still under active development.
+
+                We're continuously improving the game with new
+                features, exciting gameplay mechanics, visual
+                enhancements, achievements, and additional levels.
+
+                Stay tuned for future updates!
+
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>💬 Feedback</h2>
+
+            <p>
+
+                We'd love to hear your suggestions!
+
+                Share your feedback and help us improve
+                Memory Royals.
+
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>🐙 Follow the Project</h2>
+
+            <a class="github-btn"
+
+            href="https://github.com/Smik395/Memory_Royals"
+
+            target="_blank"
+                rel="noopener noreferrer">
+                View on GitHub
+
+            </a>
+
+        </section>
+
+    </div>
+
+    <button class="back-btn" ">
+
+        ← Back
+
+    </button>
+
+    <audio
+        id="buttonClickSound"
+        preload="auto"
+    >
+        <source
+            src="assets/audio/button-click.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+    <script src="js/rules.js"></script>
+
+</body>
+
+</html>

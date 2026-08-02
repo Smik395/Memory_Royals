@@ -1,0 +1,1258 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   BODY
+================================================== */
+
+body {
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #101a18;
+
+}
+
+
+/* ==================================================
+   BACKGROUND VIDEO
+================================================== */
+
+.game-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+
+}
+
+
+/* ==================================================
+   BACKGROUND OVERLAY
+================================================== */
+
+.background-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    z-index: -1;
+
+}
+
+
+/* ==================================================
+   MAIN CONTAINER
+================================================== */
+
+.game-container {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 25px;
+
+}
+
+
+/* ==================================================
+   TOP LEFT HUD
+================================================== */
+
+/* ==================================================
+   TOP LEFT HUD
+================================================== */
+
+.top-left-hud {
+
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    z-index: 10;
+}
+
+
+/* ==================================================
+   HUD CARD
+================================================== */
+
+.hud-card {
+
+    width: 200px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 14px 20px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(4, 30, 24, 0.96),
+            rgba(2, 20, 17, 0.94)
+        );
+
+    border: 3px solid #e7b92f;
+
+    box-shadow:
+        0 0 10px rgba(255, 205, 40, 0.65),
+        0 0 25px rgba(255, 205, 40, 0.25),
+        inset 0 0 20px rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* ==================================================
+   ICON CIRCLE
+================================================== */
+
+.hud-icon {
+
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    overflow:hidden;
+    align-items: center;
+    justify-content: center;
+    align-items:center;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    border: 2px solid #c89528;
+
+}
+
+
+.hud-icon img {
+
+    width: 82px;
+    height: 82px;
+
+    object-fit: cover;
+
+}
+.king-icon,
+.chance-icon {
+
+    object-fit: contain;
+    
+    padding: 10px;      /* Increase to 4px or 5px if you want them even smaller */
+
+}
+
+/* ==================================================
+   HUD CONTENT
+================================================== */
+
+.hud-content {
+
+    flex: 1;
+
+    margin-left: 18px;
+
+    text-align: center;
+
+}
+
+
+/* ==================================================
+   LABEL
+================================================== */
+
+.hud-label {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==================================================
+   VALUE
+================================================== */
+
+.hud-value {
+
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+/* Kings counter */
+
+.kings-value {
+
+    font-size: 20px;
+
+}
+
+
+/* First number of Kings counter */
+
+.kings-value {
+
+    color: #ffffff;
+
+}
+
+
+/* ==================================================
+   LEVEL CARD
+================================================== */
+
+.level-card .hud-value {
+
+    font-size: 25px;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .top-left-hud {
+
+        top: 12px;
+        left: 12px;
+
+        gap: 10px;
+
+    }
+
+    .hud-card {
+
+        width: 245px;
+        height: 110px;
+
+        border-radius: 20px;
+
+        padding: 10px 12px;
+
+    }
+
+    .hud-icon {
+
+        width: 78px;
+        height: 78px;
+
+    }
+
+    .hud-icon img {
+
+        width: 56px;
+        height: 56px;
+
+    }
+
+    .hud-label {
+
+        font-size: 18px;
+
+    }
+
+    .hud-value {
+
+        font-size: 42px;
+
+    }
+
+    .kings-value {
+
+        font-size: 32px;
+
+    }
+
+}
+
+
+
+
+/* ==================================================
+   TIMER
+================================================== */
+
+.timer {
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    min-width: 100px;
+
+    padding:
+        10px 22px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    background:
+        rgba(75, 30, 30, 0.85);
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+/* ==================================================
+   DANGER TIMER
+================================================== */
+
+.timer.danger {
+
+    animation:
+        dangerPulse
+        0.7s
+        infinite
+        alternate;
+
+}
+
+
+@keyframes dangerPulse {
+
+    from {
+
+        transform:
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.1);
+
+        box-shadow:
+            0 0 20px
+            rgba(255, 50, 50, 0.8);
+
+    }
+
+}
+
+
+/* ==================================================
+   GAME TITLE
+================================================== */
+
+.game-title {
+
+    margin-top: 8px;
+
+    margin-bottom: 18px;
+
+    color: white;
+
+    font-size: 30px;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.6);
+
+}
+
+
+/* ==================================================
+   GAME BOARD
+================================================== */
+
+.game-board {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    grid-template-rows:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+    width: min(90vw, 800px);
+
+    height: min(85vh, 650px);
+    aspect-ratio:
+        1 / 1;
+
+}
+
+
+/* ==================================================
+   TILE
+================================================== */
+
+.tile {
+
+    position: relative;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #54736b,
+            #314843
+        );
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+
+}
+
+
+.tile:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 16px
+        rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* ==================================================
+   HIDDEN TILE
+================================================== */
+
+.tile.hidden {
+
+    background:
+        linear-gradient(
+            145deg,
+            #45685e,
+            #253f38
+        );
+
+}
+
+
+/* Crown symbol on hidden tile */
+
+.tile.hidden::before {
+
+    content:
+        "♛";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color:
+        rgba(255, 255, 255, 0.25);
+
+    font-size: 28px;
+
+}
+
+
+/* ==================================================
+   TILE IMAGE
+================================================== */
+
+.tile-image {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    animation:
+        revealTile
+        0.25s
+        ease;
+
+}
+
+
+@keyframes revealTile {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.7);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* ==================================================
+   REVEALED TILE
+================================================== */
+
+.tile.revealed {
+
+    cursor: default;
+
+}
+
+
+/* ==================================================
+   FEEDBACK
+================================================== */
+
+/* ==================================================
+   CENTER GAME MESSAGE
+================================================== */
+
+.game-message {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.85);
+
+    min-width: 350px;
+
+    padding: 18px 35px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(10, 15, 15, 0.88);
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    text-align: center;
+
+    letter-spacing: 0.5px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 200;
+
+}
+
+
+/* ==================================================
+   SHOW MESSAGE
+================================================== */
+
+.game-message.show {
+
+    animation:
+        centerMessageAnimation
+        2s
+        ease
+        forwards;
+
+}
+
+
+/* ==================================================
+   MESSAGE ANIMATION
+================================================== */
+
+@keyframes centerMessageAnimation {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.85);
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+    75% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.95);
+
+    }
+
+}
+
+
+/* ==================================================
+   POPUP OVERLAY
+================================================== */
+
+.popup-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(0, 0, 0, 0.58);
+
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+
+    z-index: 100;
+
+}
+
+
+/* ==================================================
+   POPUP
+================================================== */
+
+.game-popup {
+    position:relative;
+
+    z-index:5;
+    width:
+        min(90vw, 430px);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #173a2c,
+            #10241d
+        );
+
+    border:
+        2px solid
+        rgba(221, 255, 230, 0.35);
+
+    color: white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.55);
+
+    animation:
+        popupAppear
+        0.4s
+        ease;
+
+}
+
+
+@keyframes popupAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.75);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* ==================================================
+   POPUP TITLE
+================================================== */
+
+.popup-title {
+
+    color:
+        #f9df9b;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ==================================================
+   POPUP TEXT
+================================================== */
+
+.popup-text {
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==================================================
+   POPUP BUTTON
+================================================== */
+
+.popup-button {
+
+    min-width: 95px;
+
+    padding:
+        10px 24px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d47b20,
+            #9d20a8
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease;
+
+}
+
+
+.popup-button:hover {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .game-title {
+
+        font-size: 22px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .game-board {
+
+        width: 92vw;
+
+        gap: 6px;
+
+    }
+
+
+    .tile {
+
+        border-radius: 7px;
+
+    }
+
+
+    .top-left-hud {
+
+        top: 10px;
+        left: 10px;
+
+    }
+
+
+    .timer {
+
+        top: 10px;
+        right: 10px;
+
+        min-width: 65px;
+
+        font-size: 24px;
+
+    }
+
+}
+/* ==================================================
+   MEMORISE MESSAGE
+================================================== */
+
+.memorise-message {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.7);
+
+    font-size: 72px;
+
+    font-weight: 900;
+
+    letter-spacing: 6px;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 25px rgba(255, 210, 120, 0.8),
+        0 6px 15px rgba(0, 0, 0, 0.6);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 200;
+}
+
+
+/* Show animation */
+
+.memorise-message.show {
+
+    animation:
+        memoriseAnimation
+        1.2s
+        ease forwards;
+
+}
+
+
+@keyframes memoriseAnimation {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.6);
+
+    }
+
+    25% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+    }
+
+    45% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+/* ==================================================
+   LEFT-CENTER TILE FEEDBACK
+================================================== */
+
+.side-feedback {
+
+    position: fixed;
+
+    top: 50%;
+    left: 30px;
+
+    transform:
+        translateY(-50%)
+        translateX(-25px)
+        scale(0.9);
+
+    min-width: 210px;
+
+    padding: 14px 20px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 15, 15, 0.55);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 210;
+}
+
+
+/* ==================================================
+   SHOW LEFT FEEDBACK
+================================================== */
+
+.side-feedback.show {
+
+    animation:
+        leftFeedbackAnimation
+        1.5s
+        ease
+        forwards;
+
+}
+
+
+@keyframes leftFeedbackAnimation {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            translateX(-25px)
+            scale(0.9);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+        transform:
+            translateY(-50%)
+            translateX(0)
+            scale(1);
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translateY(-50%)
+            translateX(0)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            translateX(-15px)
+            scale(0.96);
+
+    }
+
+}
+.popup-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+}
+
+.popup-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid gold;
+
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+
+    display: none; /* Hidden until JavaScript sets an image */
+
+}
+
+.popup-title {
+
+    margin: 0;
+
+}
+.popup-inline-icon{
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    vertical-align:middle;
+
+    margin-right:8px;
+
+    border:2px solid #ffd700;
+
+}
+#fireworks{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+.firework{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--color);
+
+    box-shadow:
+        0 0 8px var(--color),
+        0 0 16px var(--color),
+        0 0 28px var(--color);
+
+    animation:
+        explode 1.4s ease-out forwards;
+
+}
+
+@keyframes explode{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(0,0)
+            scale(1);
+
+    }
+
+    60%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(var(--x),var(--y))
+            scale(0);
+
+    }
+
+}
