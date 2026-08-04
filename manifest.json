@@ -1,0 +1,22 @@
+{
+  "name": "Memory Royals",
+  "short_name": "MemoryRoyals",
+  "description": "A strategic memory puzzle game.",
+  "start_url": "/Memory_Royals/",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "assets/gamelogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/gamelogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
