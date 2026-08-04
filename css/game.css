@@ -1373,12 +1373,14 @@ body {
 
         gap: 6px;
 
-        margin-top: 10px;
-        transform: translateX(20px);
+        margin-top: -10px;
+        transform: translateX(2px);
 
 
     }
     .game-title{
+        font-size: 26px; 
+        margin-top: -10px;
 
         transform: translateX(25px);
 
@@ -1389,7 +1391,7 @@ body {
         font-size:40px;
 
         letter-spacing:3px;
-        top: 56%;
+        top: 47%;
         left: 52.5%;
     }
     
