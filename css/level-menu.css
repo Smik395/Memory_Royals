@@ -588,54 +588,6 @@ body {
 .back-button:active {
     transform: scale(0.97);
 }
-
-
-/* ==================================================
-   RESPONSIVE DESIGN
-================================================== */
-
-@media (max-width: 700px) {
-
-    .page-title {
-        font-size: 28px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .level-path-container {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-
-    .level-item {
-        width: 130px;
-    }
-
-
-    .level-button {
-        width: 80px;
-        height: 80px;
-    }
-
-
-    .level-item.current .level-button {
-        width: 100px;
-        height: 100px;
-    }
-
-
-    .back-button {
-        right: 20px;
-        bottom: 20px;
-
-        font-size: 16px;
-
-        padding: 10px 22px;
-    }
-
-}
 /* ==================================================
    GAME LOGO - TOP LEFT
 ================================================== */
@@ -660,6 +612,17 @@ body {
     filter:
         drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45))
         drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
+}
+/* ==================================================
+   LEVEL CLICK ANIMATION
+================================================== */
+
+.level-button.clicked{
+
+    transform: scale(0.90);
+
+    transition: transform 0.15s ease;
+
 }
 
 
@@ -699,6 +662,106 @@ body {
         box-shadow:
             0 0 25px rgba(116, 234, 159, 0.95),
             0 0 45px rgba(116, 234, 159, 0.55);
+    }
+
+}
+/* ==========================================
+   MOBILE LANDSCAPE
+========================================== */
+
+@media (max-width: 950px) and (orientation: landscape) {
+
+    .level-page-logo{
+
+        top:15px;
+        left:15px;
+
+    }
+
+    .level-page-logo img{
+
+        width:80px;
+
+    }
+
+    .page-title{
+        font-size:30px;
+        margin-bottom:15px;
+        transform:translateY(0);
+    }
+
+    .level-path-container{
+
+        width:100%;
+        
+        overflow-x:auto;
+        overflow-y:hidden;
+
+        top:40px;
+
+        padding:20px 30px 70px;
+
+    }
+
+    .level-path{
+        gap:70px;
+        padding:0 50px;
+    }
+
+    .level-button{
+
+        font-size:15px;
+
+    }
+    .level-item{
+
+        width:80px;
+
+        margin-right:15px;
+
+    }
+    .level-item.current .level-button{
+
+        width:80px;
+        height:80px;
+
+        font-size:20px;
+
+    }
+    .level-item.current .level-button::after{
+
+        width:110px;
+        height:110px;
+
+    }
+    .level-item.completed .level-button,
+    .level-item.locked .level-button{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+    .lock-icon{
+        font-size:18px;
+    }
+
+    .back-button{
+
+        padding:10px 22px;
+
+        font-size:17px;
+
+        bottom:15px;
+
+        right:15px;
+
+    }
+    .play-button{
+
+        display:none;
+
     }
 
 }

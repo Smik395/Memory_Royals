@@ -42,8 +42,6 @@ function playButtonSound() {
 
 function startMenuMusic() {
 
-    if (menuMusic.paused) {
-
         menuMusic.volume = 0.4;
 
         menuMusic.play()
@@ -55,9 +53,6 @@ function startMenuMusic() {
             });
 
     }
-
-}
-
 
 /* ==========================================
    HANDLE PLAY BUTTON
@@ -149,12 +144,71 @@ function initializeMenu() {
 
     initializeButtonEvents();
 
-    // Browser autoplay policies may prevent
-    // music from starting automatically.
-    startMenuMusic();
+    checkOrientation();
+
+    window.addEventListener(
+        "resize",
+        checkOrientation
+    );
+
+    window.addEventListener(
+        "orientationchange",
+        checkOrientation
+    );
+
+    // Start music on the first user interaction
+    
+        startMenuMusic();
+        
+
+}
+/* ==========================================
+   MOBILE LANDSCAPE CHECK
+========================================== */
+
+const rotateScreen =
+    document.getElementById("rotateScreen");
+
+const gameContent =
+    document.getElementById("gameContent");
+
+function isMobileDevice() {
+
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(
+        navigator.userAgent
+    );
 
 }
 
+function checkOrientation() {
+
+    // Desktop → Always show game
+    if (!isMobileDevice()) {
+
+        rotateScreen.style.display = "none";
+        gameContent.style.display = "block";
+
+        return;
+
+    }
+
+    // Mobile Portrait
+    if (window.innerHeight > window.innerWidth) {
+
+        rotateScreen.style.display = "flex";
+        gameContent.style.display = "none";
+
+    }
+
+    // Mobile Landscape
+    else {
+
+        rotateScreen.style.display = "none";
+        gameContent.style.display = "block";
+
+    }
+
+}
 
 /* ==========================================
    START APPLICATION

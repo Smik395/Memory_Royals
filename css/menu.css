@@ -245,31 +245,180 @@ body {
    RESPONSIVE DESIGN
 ========================================== */
 
-@media (max-width: 600px) {
+/* ==========================================
+   RESPONSIVE MOBILE (LANDSCAPE)
+========================================== */
 
-    .menu-container {
-        padding-top: 8vh;
+@media (max-width: 950px) and (orientation: landscape) {
+
+    .menu-container{
+
+        justify-content:center;
+
+        padding-top:0;
+
+        padding-bottom:0;
+
     }
 
+    .game-logo{
 
-    .game-logo {
-        width: 210px;
+        width:170px;
+
+        max-width:32vw;
+
     }
 
+    .menu-buttons{
 
-    .menu-buttons {
-        margin-top: 40px;
+        margin-top:22px;
 
-        gap: 25px;
+        gap:20px;
+
     }
 
+    .menu-button{
 
-    .menu-button {
-        width: 145px;
+        width: 135px;
 
-        min-height: 55px;
+        min-height:48px;
 
-        font-size: 20px;
+        font-size:18px;
+
+    }
+
+    .button-icon{
+
+        font-size:18px;
+
+    }
+
+}
+/* ==========================================
+   SMALL LANDSCAPE DEVICES
+========================================== */
+
+@media (max-height:450px) and (orientation:landscape){
+
+    .game-logo{
+
+        width:140px;
+
+    }
+
+    .menu-buttons{
+
+        margin-top:15px;
+
+        gap:20px;
+
+    }
+
+    .menu-button{
+
+        min-height:42px;
+
+        font-size:16px;
+
+    }
+
+}
+/* ==========================================
+   ROTATE SCREEN
+========================================== */
+
+#rotateScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.80);
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+    z-index:99999;
+
+    text-align:center;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.rotate-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.rotate-logo{
+
+    width:220px;
+
+    max-width:70vw;
+
+}
+
+.rotate-icon{
+
+    font-size:64px;
+
+    animation:rotatePhone 1.5s ease-in-out infinite;
+
+}
+
+.rotate-content h2{
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#FFD700;
+
+}
+
+.rotate-content p{
+
+    font-size:20px;
+
+    opacity:.9;
+
+}
+
+@keyframes rotatePhone{
+
+    0%{
+
+        transform:rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:rotate(90deg);
+
+    }
+
+    100%{
+
+        transform:rotate(0deg);
+
     }
 
 }

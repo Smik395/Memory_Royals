@@ -241,7 +241,7 @@ function createLevelItem(levelNumber) {
 
                 playClickSound();
 
-                selectLevel(levelNumber);
+                startLevel(levelNumber);
 
             }
         );
@@ -323,18 +323,6 @@ function createLevelItem(levelNumber) {
 }
 
 
-/* ==================================================
-   SELECT LEVEL
-================================================== */
-
-function selectLevel(levelNumber) {
-
-    console.log(
-        `Level ${levelNumber} selected.`
-    );
-
-}
-
 
 /* ==================================================
    START LEVEL
@@ -342,11 +330,17 @@ function selectLevel(levelNumber) {
 
 function startLevel(levelNumber) {
 
-    console.log(
-        `Starting Level ${levelNumber}...`
-    );
+    const clickedButton =
+        document.activeElement;
 
+    if (
+        clickedButton &&
+        clickedButton.classList.contains("level-button")
+    ) {
 
+        clickedButton.classList.add("clicked");
+
+    }
     /*
         Save selected level.
 
@@ -410,7 +404,28 @@ function updateProgressLine(
         `${progressPercentage}%`;
 
 }
+/* ==================================================
+   AUTO SCROLL TO CURRENT LEVEL
+================================================== */
 
+function scrollToCurrentLevel() {
+
+    const currentLevelItem =
+        document.querySelector(".level-item.current");
+
+    if (!currentLevelItem) return;
+
+    currentLevelItem.scrollIntoView({
+
+        behavior: "instant",
+
+        inline: "center",
+
+        block: "nearest"
+
+    });
+
+}
 
 /* ==================================================
    START BACKGROUND MUSIC
@@ -528,6 +543,12 @@ function initializeLevelMenu() {
     createLevelPath();
 
     initializeEvents();
+
+    setTimeout(() => {
+
+        scrollToCurrentLevel();
+
+    }, 100);
 
 }
 

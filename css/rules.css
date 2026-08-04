@@ -147,3 +147,101 @@ body{
     bottom:30px;
 
 }
+/* ==========================================
+   MOBILE LANDSCAPE
+========================================== */
+
+@media (max-width:950px) and (orientation:landscape){
+
+    .rules-container{
+
+        width:92%;
+
+        padding:20px 0 80px;
+
+    }
+
+    .title{
+
+        font-size:32px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+        margin-bottom:25px;
+
+    }
+
+    .section{
+
+        margin-bottom:25px;
+
+    }
+
+    .section h2{
+
+        font-size:22px;
+
+        margin-bottom:12px;
+
+    }
+
+    .tile-grid{
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+    }
+
+    .tile-card{
+
+        gap:15px;
+
+        padding:12px;
+
+        border-radius:12px;
+
+    }
+
+    .tile-card img{
+
+        width:55px;
+
+    }
+
+    .tile-card h3{
+
+        font-size:18px;
+
+    }
+
+    .tile-card p{
+
+        font-size:13px;
+
+        line-height:1.4;
+
+    }
+
+    .github-btn,
+    .back-btn{
+
+        padding:10px 20px;
+
+        font-size:15px;
+
+    }
+
+    .back-btn{
+
+        right:15px;
+
+        bottom:15px;
+
+    }
+
+}
