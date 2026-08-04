@@ -3,7 +3,7 @@
   "short_name": "MemoryRoyals",
   "description": "A strategic memory puzzle game.",
   "start_url": "/Memory_Royals/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "landscape",
